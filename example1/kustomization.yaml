@@ -1,0 +1,17 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+commonLabels:
+  component: example-1
+resources:
+  - ../base
+
+patches:
+  - target:
+      kind: Deployment
+      name: example
+    patch: |-
+      - op: replace
+        path: /metadata/name
+        value: example-1
+
+  - path: deploy.yaml

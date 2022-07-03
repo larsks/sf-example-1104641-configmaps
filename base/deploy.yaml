@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: example
+spec:
+  template:
+    spec:
+      containers:
+      - command:
+        - sleep
+        - inf
+        image: alpine
+        name: demo
+      volumes:
+      - configMap:
+          name: demo
+        name: config

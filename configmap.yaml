@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: demo
+data:
+  the-thing: |
+    hello
+  an-example: |
+    this is a test
